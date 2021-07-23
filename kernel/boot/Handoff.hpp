@@ -83,6 +83,16 @@ private:
     uint64_t _cpuCount;
 };
 
+class HandoffModule {
+public:
+    // Constructors
+    HandoffModule(uint64_t begin, uint64_t end);
+    ~HandoffModule();
+private:
+    uint64_t _begin;
+    uint64_t _end;
+};
+
 // TODO: Remaining information to be made obtainable
 //  * PXE IP address (once we have a nice IP struct)
 //  * Memory map layout (once we have new memory manager)

@@ -64,6 +64,18 @@ Handoff::~Handoff()
     // Nothing to deconstruct
 }
 
+HandoffModule::HandoffModule(uint64_t begin, uint64_t end)
+    : _begin(begin)
+    , _end(end)
+{
+    // Initialize nothing.
+}
+
+HandoffModule::~HandoffModule()
+{
+
+}
+
 /*
  *  ___ _   _          _     ___
  * / __| |_(_)_ ____ _| |___|_  )
@@ -129,6 +141,10 @@ void Handoff::parseStivale2(Handoff* that, void* handoff)
                     framebuffer->blue_mask_shift
                 );
                 break;
+            }
+            case STIVALE2_STRUCT_TAG_MODULES_ID:
+            {
+                // TODO: Create HandoffModule class and construct with data here.
             }
             default:
             {
