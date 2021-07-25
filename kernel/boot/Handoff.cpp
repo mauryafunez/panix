@@ -114,13 +114,13 @@ void Handoff::parseStivale2(Handoff* that, void* handoff)
                              framebuffer->blue_mask_size,
                              framebuffer->blue_mask_shift);
                 // Initialize the framebuffer information
-                that->_fbInfo = fb::FramebufferInfo(
+                that->_fbInfo = graphics::FramebufferInfo(
                     framebuffer->framebuffer_width,
                     framebuffer->framebuffer_height,
                     framebuffer->framebuffer_bpp,
                     framebuffer->framebuffer_pitch,
                     reinterpret_cast<void*>(framebuffer->framebuffer_addr),
-                    static_cast<fb::FramebufferMemoryModel>(framebuffer->memory_model),
+                    static_cast<graphics::FramebufferMemoryModel>(framebuffer->memory_model),
                     framebuffer->red_mask_size,
                     framebuffer->red_mask_shift,
                     framebuffer->green_mask_size,
@@ -199,13 +199,13 @@ void Handoff::parseMultiboot2(Handoff* that, void* handoff)
                              framebuffer->framebuffer_blue_mask_size,
                              framebuffer->framebuffer_blue_field_position);
                 // Initialize the framebuffer information
-                that->_fbInfo = fb::FramebufferInfo(
+                that->_fbInfo = graphics::FramebufferInfo(
                     framebuffer->common.framebuffer_width,
                     framebuffer->common.framebuffer_height,
                     framebuffer->common.framebuffer_bpp,
                     framebuffer->common.framebuffer_pitch,
                     (void*)framebuffer->common.framebuffer_addr,
-                    (fb::FramebufferMemoryModel)framebuffer->common.framebuffer_type,
+                    (graphics::FramebufferMemoryModel)framebuffer->common.framebuffer_type,
                     framebuffer->framebuffer_red_mask_size,
                     framebuffer->framebuffer_red_field_position,
                     framebuffer->framebuffer_green_mask_size,

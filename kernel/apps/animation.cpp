@@ -10,7 +10,7 @@
  */
 #include <apps/animation.hpp>
 #include <dev/vga/graphics.hpp>
-#include <dev/vga/fb.hpp>
+#include <dev/vga/framebuffer.hpp>
 
 namespace apps {
 
@@ -21,15 +21,15 @@ void testAnimation()
         if (x > 250)
             x = 10;
 
-        fb::resetDoubleBuffer();
+        graphics::resetDoubleBuffer();
         //background
-        fb::putrect(0,0,280,280,0x00FFFF);
+        graphics::putrect(0,0,280,280,0x00FFFF);
         x+=10;
         //snake
-        fb::putrect(x,10,10,10,0xFF0000);
+        graphics::putrect(x,10,10,10,0xFF0000);
         //apple
-        fb::putrect(50,30,10,10,0xFFFF00);
-        fb::swap();
+        graphics::putrect(50,30,10,10,0xFFFF00);
+        graphics::swap();
     }
 }
 

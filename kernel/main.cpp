@@ -22,7 +22,8 @@
 // Architecture specific code
 #include <arch/arch.hpp>
 // Generic devices
-#include <dev/vga/fb.hpp>
+#include <dev/vga/framebuffer.hpp>
+#include <dev/vga/font.hpp>
 #include <dev/vga/graphics.hpp>
 #include <dev/tty/tty.hpp>
 #include <dev/kbd/kbd.hpp>
@@ -74,7 +75,7 @@ void kernel_main(void *boot_info, uint32_t magic) {
                                     // TODO: Bootloader should be first but currently
                                     //       requires paging, which should come after
                                     //       boot information is parsed.
-    fb::init(handoff.getFramebufferInfo());
+    graphics::init(handoff.getFramebufferInfo());
     kbd_init();                     // Initialize PS/2 Keyboard
     rtc_init();                     // Initialize Real Time Clock
     timer_init(1000);               // Programmable Interrupt Timer (1ms)

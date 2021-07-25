@@ -13,9 +13,9 @@
  */
 #pragma once
 #include <stdint.h>
-#include <dev/vga/fb.hpp>
+#include <dev/vga/framebuffer.hpp>
 
-namespace fb {
+namespace graphics {
 
 /**
  * @brief Checks if the framebuffer has been initialized

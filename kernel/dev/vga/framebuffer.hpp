@@ -12,7 +12,7 @@
 #include <stdint.h>
 #include <meta/compiler.hpp>
 
-namespace fb {
+namespace graphics {
 
 enum FramebufferMemoryModel {
     Undefined_FBMM = 0,
