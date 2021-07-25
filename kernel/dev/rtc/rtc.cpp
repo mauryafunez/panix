@@ -10,7 +10,7 @@
  */
 
 #include <arch/arch.hpp>
-#include <dev/tty/tty.hpp>
+#include <dev/graphics/tty.hpp>
 #include <dev/rtc/rtc.hpp>
 #include <lib/string.hpp>
 #include <lib/stdio.hpp>

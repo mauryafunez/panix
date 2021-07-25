@@ -12,7 +12,7 @@
 #include <arch/arch.hpp>
 #include <lib/stdio.hpp>
 #include <lib/string.hpp>
-#include <dev/tty/tty.hpp>
+#include <dev/graphics/tty.hpp>
 
 static void timer_callback(registers_t *regs);
 volatile uint32_t timer_tick;

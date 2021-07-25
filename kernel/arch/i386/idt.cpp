@@ -11,7 +11,7 @@
 
 #include <arch/arch.hpp>
 #include <lib/stdio.hpp>
-#include <dev/tty/tty.hpp>
+#include <dev/graphics/tty.hpp>
 
 idt_gate_t idt[IDT_ENTRIES];
 idt_register_t idt_reg;

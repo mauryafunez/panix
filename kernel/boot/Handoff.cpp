@@ -15,7 +15,7 @@
 #include <mem/paging.hpp>
 #include <sys/panic.hpp>
 // Generic devices
-#include <dev/tty/tty.hpp>
+#include <dev/graphics/tty.hpp>
 #include <dev/serial/rs232.hpp>
 // Bootloaders
 #include <multiboot/multiboot2.h>
