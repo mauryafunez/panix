@@ -76,6 +76,7 @@ void kernel_main(void *boot_info, uint32_t magic) {
                                     //       requires paging, which should come after
                                     //       boot information is parsed.
     graphics::init();
+    graphics::font::Draw('H', 0, 0, 0xFFFFFF);
     kbd_init();                     // Initialize PS/2 Keyboard
     rtc_init();                     // Initialize Real Time Clock
     timer_init(1000);               // Programmable Interrupt Timer (1ms)
@@ -106,7 +107,6 @@ void kernel_main(void *boot_info, uint32_t magic) {
 }
 
 static void kernel_print_splash() {
-    tty_clear();
     kprintf(
         "\033[93m"
         "Panix %s\n"

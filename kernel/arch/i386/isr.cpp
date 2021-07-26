@@ -72,7 +72,7 @@ extern "C" void isr_handler(registers_t *r) {
 }
 
 extern "C" void irq_handler(registers_t *regs) {
-    set_indicator(VGA_Red);
+    DrawInterruptIndicator(VGA_Red);
     /* After every interrupt we need to send an EOI to the PICs
      * or they will not send another interrupt again */
     if (regs->int_num >= 40) {
@@ -82,9 +82,9 @@ extern "C" void irq_handler(registers_t *regs) {
 
     /* Handle the interrupt in a more modular way */
     if (interrupt_handlers[regs->int_num] != 0) {
-        set_indicator(VGA_Yellow);
+        DrawInterruptIndicator(VGA_Yellow);
         isr_t handler = interrupt_handlers[regs->int_num];
         handler(regs);
     }
-    set_indicator(VGA_Green);
+    DrawInterruptIndicator(VGA_Green);
 }

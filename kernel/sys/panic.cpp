@@ -23,7 +23,6 @@ void panic_print_file(const char *file, uint32_t line, const char *func);
 void panic_print_register(registers_t *regs);
 
 void printPanicScreen(int exception) {
-    tty_clear(VGA_Black, VGA_White);
     const char* tag;
     if (exception == 13) {
         tag = "< Wait... That's Illegal >\n";

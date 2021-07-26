@@ -9,13 +9,13 @@
  * 
  */
 #include <dev/graphics/framebuffer.hpp>
-// Types
+#include <sys/panic.hpp>
 #include <stddef.h>
 #include <stdint.h>
 
 namespace graphics {
 
-static Framebuffer* framebuffer;
+static Framebuffer* framebuffer = NULL;
 
 Framebuffer::Framebuffer()
     : _addr(NULL)
@@ -32,7 +32,8 @@ Framebuffer::Framebuffer()
     , _memoryModel(Undefined_FBMM)
 {
     // Default constructor.
-    framebuffer = this;
+    if (!framebuffer)
+        framebuffer = this;
 }
 
 Framebuffer::Framebuffer(uint32_t width, uint32_t height, uint16_t depth, uint32_t pitch, void* addr)
@@ -50,7 +51,8 @@ Framebuffer::Framebuffer(uint32_t width, uint32_t height, uint16_t depth, uint32
     , _memoryModel(Undefined_FBMM)
 {
     // Common parameters constructor
-    framebuffer = this;
+    if (!framebuffer)
+        framebuffer = this;
 }
 
 Framebuffer::Framebuffer(uint32_t width, uint32_t height,
@@ -73,7 +75,8 @@ Framebuffer::Framebuffer(uint32_t width, uint32_t height,
     , _memoryModel(model)
 {
     // All parameters constructor
-    framebuffer = this;
+    if (!framebuffer)
+        framebuffer = this;
 }
 
 Framebuffer* getFramebuffer()
