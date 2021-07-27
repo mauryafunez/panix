@@ -111,6 +111,7 @@ static void kernel_print_splash() {
         "Panix %s\n"
         "Copyright the Panix Contributors (c) %i. All rights reserved.\n"
         "Kernel source available at %s.\n"
+        "Maury was here \n"
         "\033[0m",
         VER_NAME,
         (
